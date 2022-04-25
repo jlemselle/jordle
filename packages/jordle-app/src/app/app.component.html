@@ -1,0 +1,167 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Frordle 🇫🇷</a>
+  </div>
+</nav>
+
+<div class="container mt-3">
+  <div
+    *ngFor="let guess of pastGuesses"
+    class="d-flex flex-row justify-content-center"
+  >
+    <app-spot
+      *ngFor="let guessOutput of guess"
+      [letter]="guessOutput.letter"
+      [result]="guessOutput.result"
+    ></app-spot>
+  </div>
+
+  <div class="d-flex flex-row justify-content-center">
+    <app-spot [letter]="guess[0] | uppercase"></app-spot>
+    <app-spot [letter]="guess[1] | uppercase"></app-spot>
+    <app-spot [letter]="guess[2] | uppercase"></app-spot>
+    <app-spot [letter]="guess[3] | uppercase"></app-spot>
+    <app-spot [letter]="guess[4] | uppercase"></app-spot>
+  </div>
+</div>
+
+<div class="d-flex flex-row justify-content-center my-2">
+  <app-key
+    letter="a"
+    [result]="letterState('a')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="z"
+    [result]="letterState('z')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="e"
+    [result]="letterState('e')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="r"
+    [result]="letterState('r')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="t"
+    [result]="letterState('t')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="y"
+    [result]="letterState('y')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="u"
+    [result]="letterState('u')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="i"
+    [result]="letterState('i')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="o"
+    [result]="letterState('o')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="p"
+    [result]="letterState('p')"
+    (pressed)="input($event)"
+  ></app-key>
+</div>
+
+<div class="d-flex flex-row justify-content-center my-2">
+  <app-key
+    letter="q"
+    [result]="letterState('q')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="s"
+    [result]="letterState('s')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="d"
+    [result]="letterState('d')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="f"
+    [result]="letterState('f')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="g"
+    [result]="letterState('g')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="h"
+    [result]="letterState('h')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="j"
+    [result]="letterState('j')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="k"
+    [result]="letterState('k')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="l"
+    [result]="letterState('l')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="m"
+    [result]="letterState('m')"
+    (pressed)="input($event)"
+  ></app-key>
+</div>
+
+<div class="d-flex flex-row justify-content-center my-2">
+  <app-key letter="retour" (pressed)="enter()"></app-key>
+  <app-key
+    letter="w"
+    [result]="letterState('w')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="x"
+    [result]="letterState('x')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="c"
+    [result]="letterState('c')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="v"
+    [result]="letterState('v')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="b"
+    [result]="letterState('b')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key
+    letter="n"
+    [result]="letterState('n')"
+    (pressed)="input($event)"
+  ></app-key>
+  <app-key letter="suppr arrière" (pressed)="backspace()"></app-key>
+</div>

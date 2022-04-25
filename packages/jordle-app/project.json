@@ -1,0 +1,93 @@
+{
+  "projectType": "application",
+  "root": "packages/jordle-app",
+  "sourceRoot": "packages/jordle-app/src",
+  "prefix": "jordle",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/jordle-app",
+        "index": "packages/jordle-app/src/index.html",
+        "main": "packages/jordle-app/src/main.ts",
+        "polyfills": "packages/jordle-app/src/polyfills.ts",
+        "tsConfig": "packages/jordle-app/tsconfig.app.json",
+        "assets": [
+          "packages/jordle-app/src/favicon.ico",
+          "packages/jordle-app/src/assets"
+        ],
+        "styles": ["packages/jordle-app/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "packages/jordle-app/src/environments/environment.ts",
+              "with": "packages/jordle-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "jordle-app:build:production"
+        },
+        "development": {
+          "browserTarget": "jordle-app:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "jordle-app:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/jordle-app/**/*.ts",
+          "packages/jordle-app/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/jordle-app"],
+      "options": {
+        "jestConfig": "packages/jordle-app/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,32 @@
+{
+  "root": "packages/jordle-core",
+  "sourceRoot": "packages/jordle-core/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/jordle-core",
+        "main": "packages/jordle-core/src/index.ts",
+        "tsConfig": "packages/jordle-core/tsconfig.lib.json",
+        "assets": ["packages/jordle-core/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/jordle-core/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/jordle-core"],
+      "options": {
+        "jestConfig": "packages/jordle-core/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
