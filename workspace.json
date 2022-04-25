@@ -3,7 +3,6 @@
   "projects": {
     "jordle-app": "packages/jordle-app",
     "jordle-app-e2e": "packages/jordle-app-e2e",
-    "jordle-cli": "packages/jordle-cli",
     "jordle-core": "packages/jordle-core"
   }
 }
