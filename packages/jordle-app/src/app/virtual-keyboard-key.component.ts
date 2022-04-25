@@ -12,9 +12,9 @@ import { GuessResult, LetterState } from '@jordle/jordle-core';
   >
     {{ letter | uppercase }}
   </button>`,
-  selector: 'app-key',
+  selector: 'app-virtual-keyboard-key',
 })
-export class KeyComponent {
+export class VirtualKeyboardKeyComponent {
   @Input() letter: string = '';
   @Input() result: LetterState = LetterState.UNKNOWN;
   @Output() pressed: EventEmitter<string> = new EventEmitter<string>();
