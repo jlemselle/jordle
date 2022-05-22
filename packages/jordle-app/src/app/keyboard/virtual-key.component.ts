@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { GuessResult, LetterState } from '@jordle/jordle-core';
+import { LetterState } from '@jordle/jordle-core';
 
 @Component({
   template: ` <button
@@ -12,10 +12,10 @@ import { GuessResult, LetterState } from '@jordle/jordle-core';
   >
     {{ letter | uppercase }}
   </button>`,
-  selector: 'app-virtual-keyboard-key',
+  selector: 'jordle-virtual-key',
 })
-export class VirtualKeyboardKeyComponent {
-  @Input() letter: string = '';
+export class VirtualKeyComponent {
+  @Input() letter = '';
   @Input() result: LetterState = LetterState.UNKNOWN;
   @Output() pressed: EventEmitter<string> = new EventEmitter<string>();
 }

@@ -13,9 +13,9 @@ import { GuessResult } from '@jordle/jordle-core';
       <h5 class="card-title">{{ letter | uppercase }}</h5>
     </div>
   </div>`,
-  selector: 'app-letter-cell',
+  selector: 'jordle-letter-cell',
 })
 export class LetterCellComponent {
-  @Input() letter: string = '';
+  @Input() letter = '';
   @Input() result: GuessResult | undefined;
 }

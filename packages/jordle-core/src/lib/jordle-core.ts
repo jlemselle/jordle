@@ -1,3 +1,5 @@
+import { LetterStateProvider } from './letter-state-provider';
+
 export function jordleCore(): string {
   return 'jordle-core';
 }
@@ -88,7 +90,7 @@ export class GuessChecker {
   }
 }
 
-export class Jordle {
+export class Jordle implements LetterStateProvider {
   private guessChecker: GuessChecker;
   private availableLetters: { [key: string]: LetterState } = {};
 
